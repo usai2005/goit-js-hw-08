@@ -19,8 +19,7 @@ player.on('timeupdate', currentTime);
 //USING setCurrentTime() METHOD
 const localStorageContent = localStorage.getItem(STORAGE_KEY);
 
-if (!localStorageContent) {
-    return;
+if (localStorageContent) {
+    player.setCurrentTime(localStorageContent);
 };
-player.setCurrentTime(localStorageContent);
 
