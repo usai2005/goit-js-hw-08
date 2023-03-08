@@ -17,5 +17,10 @@ const currentTime = throttle(function ({ seconds, }) {
 player.on('timeupdate', currentTime);
 
 //USING setCurrentTime() METHOD
-player.setCurrentTime(localStorage.getItem(STORAGE_KEY));
+const localStorageContent = localStorage.getItem(STORAGE_KEY);
+
+if (!localStorageContent) {
+    return;
+};
+player.setCurrentTime(localStorageContent);
 
